@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "octopuscore",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/julianko13/octopuscore.git",
+      "state" : {
+        "branch" : "develop",
+        "revision" : "a30b03a8ab4cb47a2afb793c2abcb131ebcd67d7"
+      }
+    }
+  ],
+  "version" : 2
+}

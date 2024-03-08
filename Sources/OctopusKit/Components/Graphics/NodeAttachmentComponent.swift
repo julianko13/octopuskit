@@ -70,7 +70,7 @@ open class NodeAttachmentComponent <AttachmentType> : OKComponent
     
     /// `super` must be called by overriding subclass for proper functionality. Adds `attachment` as a child of the `node` specified by the `NodeComponent`.
     open override func didAddToEntity(withNode node: SKNode) {
-        OKLog.components.debug("\(📜("\(node) ← \(attachment)"))")
+        OKLog.components.debug("\(📜("\(node) ← \(self.attachment)"))")
         
         // Warn if the overridden parent is not a child of this component's entity's node.
         
@@ -80,7 +80,7 @@ open class NodeAttachmentComponent <AttachmentType> : OKComponent
             !parentOverride.inParentHierarchy(node) /// BUG FIXED: Use `child.inParentHierarchy(parent)` instead of `parent.children.contains(child)` because the latter will check only one layer deep.
             && parentOverride != node /// Skip warning if the `parentOverride` IS the node. This will be the case in situations like `parentOverride = scene.camera ?? scene` where a child node is added to a scene's camera if there is one, otherwise to the scene itself.
         {
-            OKLog.warnings.debug("\(📜("The specified parentOverride \(parentOverride) is not a child of \(entity)'s node: \(node)"))")
+            OKLog.warnings.debug("\(📜("The specified parentOverride \(parentOverride) is not a child of \(self.entity)'s node: \(node)"))")
         }
         
         // Allow the subclass to conveniently create an attachment by simply overriding `createAttachment(for:)`.
@@ -153,7 +153,7 @@ open class NodeAttachmentComponent <AttachmentType> : OKComponent
         if  let existingParent = attachment.parent,
             existingParent !== targetParent
         {
-            OKLog.warnings.debug("\(📜("\(attachment) already has a different parent: \(existingParent) — Moving to \(String(describing: entity))'s NodeComponent node: \(targetParent)"))")
+            OKLog.warnings.debug("\(📜("\(attachment) already has a different parent: \(existingParent) — Moving to \(String(describing: self.entity))'s NodeComponent node: \(targetParent)"))")
             
             attachment.removeFromParent() // ℹ️ DESIGN: Snatch the attachment from its existing parent, as that would be the expected behavior of adding this component.
         }

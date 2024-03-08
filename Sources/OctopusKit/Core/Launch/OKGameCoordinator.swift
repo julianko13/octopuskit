@@ -57,7 +57,7 @@ open class OKGameCoordinator: OKStateMachine, OKScenePresenter, ObservableObject
     
     @Published public var currentGameState: OKGameState? = nil {
         didSet {
-            OKLog.framework.debug("\(📜("\(oldValue) → \(currentGameState)"))")
+            OKLog.framework.debug("\(📜("\(oldValue) → \(self.currentGameState)"))")
         }
     }
 
@@ -76,7 +76,7 @@ open class OKGameCoordinator: OKStateMachine, OKScenePresenter, ObservableObject
     public weak var viewController: OKViewController? {
         didSet {
             // Can't use @LogChanges because "Property with a wrapper cannot also be weak"
-            OKLog.framework.debug("\(📜("\(oldValue) → \(viewController)"))")
+            OKLog.framework.debug("\(📜("\(oldValue) → \(self.viewController)"))")
         }
     }
     
@@ -87,7 +87,7 @@ open class OKGameCoordinator: OKStateMachine, OKScenePresenter, ObservableObject
 
     @Published public var currentScene: OKScene? {
            didSet {
-               OKLog.framework.debug("\(📜("\(oldValue) → \(currentScene)"))")
+               OKLog.framework.debug("\(📜("\(oldValue) → \(self.currentScene)"))")
            }
        }
     
@@ -225,7 +225,7 @@ open class OKGameCoordinator: OKStateMachine, OKScenePresenter, ObservableObject
         if  self.canEnterState(stateClass) {
             self.objectWillChange.send()
         } else {
-            OKLog.warnings.debug("\(📜("Cannot enter \(stateClass) from currentState: \(currentState)"))")
+            OKLog.warnings.debug("\(📜("Cannot enter \(stateClass) from currentState: \(self.currentState)"))")
             return false
         }
         
@@ -246,12 +246,12 @@ open class OKGameCoordinator: OKStateMachine, OKScenePresenter, ObservableObject
         if  didEnterRequestedState {
             
             if  self.currentState != self.currentGameState {
-                OKLog.errors.debug("\(📜("currentState: \(currentGameState) != currentGameState: \(currentGameState)"))")
+                OKLog.errors.debug("\(📜("currentState: \(self.currentGameState) != currentGameState: \(self.currentGameState)"))")
             }
             
         } else {
             
-            OKLog.warnings.debug("\(📜("Could not enter \(stateClass) — currentState: \(currentState)"))")
+            OKLog.warnings.debug("\(📜("Could not enter \(stateClass) — currentState: \(self.currentState)"))")
             
             // Reset the `currentGameState` to the actual state.
             
@@ -276,7 +276,7 @@ open class OKGameCoordinator: OKStateMachine, OKScenePresenter, ObservableObject
         // Even though GKStateMachine should handle the correct transitions between states, this coordinator should only initiate the initial state only once, just to be extra safe, and also as a flag for other classes to refer to if needed.
         
         guard !didEnterInitialState else {
-            OKLog.framework.debug("\(📜("didEnterInitialState already set. currentState: \(currentState)"))")
+            OKLog.framework.debug("\(📜("didEnterInitialState already set. currentState: \(self.currentState)"))")
             return false
         }
         

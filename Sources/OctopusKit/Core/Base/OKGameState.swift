@@ -57,7 +57,7 @@ open class OKGameState: OKState, OKSceneDelegate, ObservableObject {
     public fileprivate(set) weak var delegate: OKGameStateDelegate? {
         didSet {
             // Can't use @LogChanges because "Property with a wrapper cannot also be weak"
-            OKLog.framework.debug("\(📜("\(oldValue) → \(delegate)"))")
+            OKLog.framework.debug("\(📜("\(oldValue) → \(self.delegate)"))")
         }
     }
     
@@ -170,7 +170,7 @@ open class OKGameState: OKState, OKSceneDelegate, ObservableObject {
         // Notify our delegate, to let it perform any outgoing animations etc., or in case the game uses a single scene for multiple states (e.g. displaying an overlay for the paused state, menus, etc. on the gameplay view.)
         
         if  gameCoordinator?.currentScene !== self.delegate {
-            OKLog.warnings.debug("\(📜("gameCoordinator?.currentScene: \(gameCoordinator?.currentScene) !== self.delegate: \(self.delegate)"))")
+            OKLog.warnings.debug("\(📜("gameCoordinator?.currentScene: \(self.gameCoordinator?.currentScene) !== self.delegate: \(self.delegate)"))")
         }
         
         self.delegate?.gameCoordinatorWillExitState(self, to: nextState)

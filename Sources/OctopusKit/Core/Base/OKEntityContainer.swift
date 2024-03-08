@@ -78,7 +78,7 @@ public extension OKEntityContainer {
             return
         }
         
-        OKLog.components.debug("\(📜("\(entity.debugDescription), entities.count = \(entities.count)"))")
+        OKLog.components.debug("\(📜("\(entity.debugDescription), entities.count = \(self.entities.count)"))")
         
         // If it's an `OKEntity` (as opposed to a basic `GKEntity`) and this entity container is an `OKEntityDelegate` (e.g. an `OKScene`) then introduce them to each other.
         
@@ -234,7 +234,7 @@ public extension OKEntityContainer {
         // NOTE: Remove the entity after components have been removed, to avoid the "entity is not registered with scene" warnings and reduce the potential for other unexpected behavior.
         
         if  entities.remove(entityToRemove) != nil {
-            OKLog.components.debug("\(📜("Removed \(entityToRemove.debugDescription), entities.count = \(entities.count)"))")
+            OKLog.components.debug("\(📜("Removed \(entityToRemove.debugDescription), entities.count = \(self.entities.count)"))")
             return true
         } else {
             return false

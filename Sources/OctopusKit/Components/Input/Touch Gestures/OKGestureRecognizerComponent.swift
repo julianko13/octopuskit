@@ -52,7 +52,7 @@ open class OKGestureRecognizerComponent <GestureRecognizerType> : OKComponent, O
         super.didAddToEntity(withNode: node)
         
         guard let scene = coComponent(SceneComponent.self)?.scene else {
-            OKLog.warnings.debug("\(📜("\(entity) missing SceneComponent — Detaching"))")
+            OKLog.warnings.debug("\(📜("\(self.entity) missing SceneComponent — Detaching"))")
             self.removeFromEntity()
             return
         }
@@ -70,7 +70,7 @@ open class OKGestureRecognizerComponent <GestureRecognizerType> : OKComponent, O
         super.willRemoveFromEntity(withNode: node)
         
         guard let scene = coComponent(SceneComponent.self)?.scene else {
-            OKLog.warnings.debug("\(📜("\(entity) missing SceneComponent — Detaching"))")
+            OKLog.warnings.debug("\(📜("\(self.entity) missing SceneComponent — Detaching"))")
             self.removeFromEntity()
             return
         }

@@ -157,7 +157,7 @@ open class EntitySpawnerComponent: OKComponent {
         
         // We must have something to spawn.
         guard let entityToSpawn = entityToSpawnOverride ?? (spawnTemplate?.copy() as? OKEntity) else {
-            OKLog.warnings.debug("\(📜("No entityToSpawnOverride and spawnTemplate \(spawnTemplate) did not return .copy()"))")
+            OKLog.warnings.debug("\(📜("No entityToSpawnOverride and spawnTemplate \(self.spawnTemplate) did not return .copy()"))")
             return false
         }
         

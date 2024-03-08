@@ -42,7 +42,7 @@ public final class AgentComponent: GKAgent2D, RequiresUpdatesPerFrame {
                 self.delegate = spriteKitComponent
             }
             else {
-                OKLog.warnings.debug("\(📜("\(entity) missing NodeComponent — Cannot set delegate"))")
+                OKLog.warnings.debug("\(📜("\(self.entity) missing NodeComponent — Cannot set delegate"))")
             }
             
         }
@@ -55,7 +55,7 @@ public final class AgentComponent: GKAgent2D, RequiresUpdatesPerFrame {
             self.rotation = Float(node.zRotation)
         }
         else {
-            OKLog.warnings.debug("\(📜("\(entity) does not have a NodeComponent with a valid node – Cannot set initial position/rotation"))")
+            OKLog.warnings.debug("\(📜("\(self.entity) does not have a NodeComponent with a valid node – Cannot set initial position/rotation"))")
         }
     }
     

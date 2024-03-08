@@ -107,7 +107,7 @@ public final class NodeComponent: GKSKNodeComponent {
     // MARK: Adding to Entity
     
     public final override func didAddToEntity() {
-        OKLog.components.debug("\(📜("\(entity) ← \(self) \(super.node)"))")
+        OKLog.components.debug("\(📜("\(self.entity) ← \(self) \(super.node)"))")
         
         // Does our node already has a different entity? Check this before calling `super` which may set the node's `entity` property to ours.
         
@@ -168,7 +168,7 @@ public final class NodeComponent: GKSKNodeComponent {
     // MARK: Removal
     
     public final override func willRemoveFromEntity() {
-        OKLog.components.debug("\(📜("\(entity) ~ \(self) \(super.node)"))")
+        OKLog.components.debug("\(📜("\(self.entity) ~ \(self) \(super.node)"))")
         
         // Warn if our node somehow ended up in a different entity by now. Check this before calling `super` which may set the node's `entity` property to `nil`.
         

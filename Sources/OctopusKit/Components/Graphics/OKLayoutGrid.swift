@@ -168,7 +168,7 @@ public final class OKLayoutGridGrid: SKNode {
     }
     
     deinit {
-        OKLog.deinits.debug("\(📜("size = \(size)"))")
+        OKLog.deinits.debug("\(📜("size = \(self.size)"))")
     }
     
     // MARK: - Cell Management

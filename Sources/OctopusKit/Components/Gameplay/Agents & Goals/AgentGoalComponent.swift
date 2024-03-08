@@ -100,7 +100,7 @@ open class AgentGoalComponent: OKComponent {
     open func applyGoalToAgent() {
         
         guard let agent = self.agent else {
-            OKLog.warnings.debug("\(📜("\(entity) missing AgentComponent"))")
+            OKLog.warnings.debug("\(📜("\(self.entity) missing AgentComponent"))")
             return
         }
         

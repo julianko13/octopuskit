@@ -62,7 +62,7 @@ open class OKComponent: GKComponent {
     
     /// - IMPORTANT: If a subclass overrides this method, then `super.didAddToEntity()` *MUST* be called to ensure proper functionality, e.g. to check for dependencies on other components and to set `shouldRemoveFromEntityOnDeinit = true`.
     open override func didAddToEntity() {
-        OKLog.components.debug("\(📜("\(entity) ← \(self)"))")
+        OKLog.components.debug("\(📜("\(self.entity) ← \(self)"))")
         super.didAddToEntity()
         guard self.entity != nil else { fatalError("entity not set") }
         
@@ -152,7 +152,7 @@ open class OKComponent: GKComponent {
     
     /// - IMPORTANT: If a subclass overrides this method, then `super.willRemoveFromEntity()` MUST be called to ensure proper functionality, including clearing `shouldRemoveFromEntityOnDeinit`.
     open override func willRemoveFromEntity() {
-        OKLog.components.debug("\(📜("\(entity) ~ \(self)"))")
+        OKLog.components.debug("\(📜("\(self.entity) ~ \(self)"))")
         
         super.willRemoveFromEntity()
         guard self.entity != nil else { return }

@@ -24,7 +24,7 @@ public final class PhysicsWorldComponent: OKComponent {
         super.didAddToEntity()
         
         guard let scene = coComponent(SceneComponent.self)?.scene  else {
-            OKLog.warnings.debug("\(📜("\(entity) missing SceneComponent – Cannot assign physicsWorld"))")
+            OKLog.warnings.debug("\(📜("\(self.entity) missing SceneComponent – Cannot assign physicsWorld"))")
             return
         }
         

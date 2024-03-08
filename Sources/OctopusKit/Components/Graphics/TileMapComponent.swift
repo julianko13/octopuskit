@@ -134,7 +134,7 @@ open class TileMapComponent: OKComponent {
             return false
         }
         guard index.isWithin(0 ..< layers.endIndex) else {
-            OKLog.errors.debug("\(📜("Layer index outside 0...\(layers.endIndex - 1): \(index)"))")
+            OKLog.errors.debug("\(📜("Layer index outside 0...\(self.layers.endIndex - 1): \(index)"))")
             return false
         }
         return true
@@ -189,7 +189,7 @@ open class TileMapComponent: OKComponent {
                     return
                 }
             } else {
-                OKLog.warnings.debug("\(📜("\(entity) has no NoiseMapComponent"))")
+                OKLog.warnings.debug("\(📜("\(self.entity) has no NoiseMapComponent"))")
                 return
             }
         }

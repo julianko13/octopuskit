@@ -97,7 +97,7 @@ public final class MessageStackerComponent: NodeAttachmentComponent<SKNode> {
     }
     
     deinit {
-        OKLog.deinits.debug("\(📜("messages.count = \(messageLabels.count)"))") // TODO: Mention last message
+        OKLog.deinits.debug("\(📜("messages.count = \(self.messageLabels.count)"))") // TODO: Mention last message
     }
     
     // MARK: - Messages

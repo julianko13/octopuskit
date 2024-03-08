@@ -72,7 +72,7 @@ public final class TextureDictionaryComponent: OKComponent {
     
     public override func didAddToEntity(withNode node: SKNode) {
         guard let sprite = node as? SKSpriteNode else {
-            OKLog.warnings.debug("\(📜("\(entity) does not have a SKSpriteNode as its NodeComponent's node"))")
+            OKLog.warnings.debug("\(📜("\(self.entity) does not have a SKSpriteNode as its NodeComponent's node"))")
             return
         }
         
@@ -82,7 +82,7 @@ public final class TextureDictionaryComponent: OKComponent {
     }
     
     deinit {
-        OKLog.deinits.debug("\(📜("atlasName = \"\(atlasName)\""))")
+        OKLog.deinits.debug("\(📜("atlasName = \"\(self.atlasName)\""))")
     }
     
     // MARK - Dictionary Management
@@ -121,7 +121,7 @@ public final class TextureDictionaryComponent: OKComponent {
         // If we didn't find any textures with the specified prefix, just return the default one.
         
         if frameList.count < 1 {
-            OKLog.errors.debug("\(📜("\(atlas) has no textures beginning with \"\(prefix)\" — Returning the first texture from the atlas"))")
+            OKLog.errors.debug("\(📜("\(self.atlas) has no textures beginning with \"\(prefix)\" — Returning the first texture from the atlas"))")
             frameList.append(atlas.textureNamed(atlas.textureNames.first ?? ""))
         }
         

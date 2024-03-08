@@ -81,7 +81,7 @@ open class TimeComponent: OKComponent, RequiresUpdatesPerFrame {
     }
     
     deinit {
-        OKLog.deinits.debug("\(📜("secondsElapsed = \(secondsElapsed)"))")
+        OKLog.deinits.debug("\(📜("secondsElapsed = \(self.secondsElapsed)"))")
     }
 }
 

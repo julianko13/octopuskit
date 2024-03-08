@@ -92,7 +92,7 @@ public final class CameraComponent: NodeAttachmentComponent <SKCameraNode> {
         super.didAddToEntity(withNode: node)
         
         guard let scene = coComponent(SceneComponent.self)?.scene else {
-            OKLog.errors.debug("\(📜("\(entity) missing SceneComponent – Cannot assign camera"))")
+            OKLog.errors.debug("\(📜("\(self.entity) missing SceneComponent – Cannot assign camera"))")
             return
         }
         

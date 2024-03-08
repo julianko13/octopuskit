@@ -73,7 +73,7 @@ public final class TileBasedPositionComponent: OKComponent, RequiresUpdatesPerFr
             else { return nil }
         
         guard tileMapComponent.layers.isValidIndex(self.tileMapLayer) else {
-            OKLog.warnings.debug("\(📜("\(tileMapLayer) out of bounds for the \(tileMapComponent.layers.count) layers in \(tileMapComponent)"))")
+            OKLog.warnings.debug("\(📜("\(self.tileMapLayer) out of bounds for the \(tileMapComponent.layers.count) layers in \(tileMapComponent)"))")
             return nil
         }
         
@@ -210,7 +210,7 @@ public final class TileBasedPositionComponent: OKComponent, RequiresUpdatesPerFr
         }
         
         guard tileMapComponent.layers.isValidIndex(self.tileMapLayer) else {
-            OKLog.warnings.debug("\(📜("\(tileMapLayer) out of bounds for the \(tileMapComponent.layers.count) layers in \(tileMapComponent)"))")
+            OKLog.warnings.debug("\(📜("\(self.tileMapLayer) out of bounds for the \(tileMapComponent.layers.count) layers in \(tileMapComponent)"))")
             return
         }
         
