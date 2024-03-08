@@ -31,7 +31,7 @@ let package = Package(
         .target(
             name: "OctopusKit",
             //dependencies: ["OctopusCore"],
-            .dependencies: [.product(name: "OctopusCore", package:"octopuscore"],
+            .dependencies: [.product(name: "OctopusCore", package:"octopuscore")],
             exclude: [
                 "Apple API Extensions/SwiftUI/OctopusUI.md"],
             resources: [
