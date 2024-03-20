@@ -38,7 +38,7 @@ public extension View {
     ///
     /// - IMPORTANT: Using OS-specific APIs which may be unavailable on other platforms may cause compile-time errors.
     @inlinable
-    func iOS <ModifiedView: View> (modifier: (Self) -> ModifiedView) -> some View {
+    func iOS <ModifiedView: View> (@ViewBuilder modifier: (Self) -> ModifiedView) -> some View {
         #if os(iOS)
         return modifier(self)
         #else
@@ -52,7 +52,7 @@ public extension View {
     ///
     /// - IMPORTANT: Using OS-specific APIs which may be unavailable on other platforms may cause compile-time errors.
     @inlinable
-    func iOSExcluded <ModifiedView: View> (modifier: (Self) -> ModifiedView) -> some View {
+    func iOSExcluded <ModifiedView: View> (@ViewBuilder modifier: (Self) -> ModifiedView) -> some View {
         #if !os(iOS)
         return modifier(self)
         #else
@@ -68,7 +68,7 @@ public extension View {
     ///
     /// - IMPORTANT: Using OS-specific APIs which may be unavailable on other platforms may cause compile-time errors.
     @inlinable
-    func macOS <ModifiedView: View> (modifier: (Self) -> ModifiedView) -> some View {
+    func macOS <ModifiedView: View> (@ViewBuilder modifier: (Self) -> ModifiedView) -> some View {
         #if os(macOS)
         return modifier(self)
         #else
@@ -82,7 +82,7 @@ public extension View {
     ///
     /// - IMPORTANT: Using OS-specific APIs which may be unavailable on other platforms may cause compile-time errors.
     @inlinable
-    func macOSExcluded <ModifiedView: View> (modifier: (Self) -> ModifiedView) -> some View {
+    func macOSExcluded <ModifiedView: View> (@ViewBuilder modifier: (Self) -> ModifiedView) -> some View {
         #if !os(macOS)
         return modifier(self)
         #else
@@ -98,7 +98,7 @@ public extension View {
     ///
     /// - IMPORTANT: Using OS-specific APIs which may be unavailable on other platforms may cause compile-time errors.
     @inlinable
-    func tvOS <ModifiedView: View> (modifier: (Self) -> ModifiedView) -> some View {
+    func tvOS <ModifiedView: View> (@ViewBuilder modifier: (Self) -> ModifiedView) -> some View {
         #if os(tvOS)
         return modifier(self)
         #else
@@ -112,7 +112,7 @@ public extension View {
     ///
     /// - IMPORTANT: Using OS-specific APIs which may be unavailable on other platforms may cause compile-time errors.
     @inlinable
-    func tvOSExcluded <ModifiedView: View> (modifier: (Self) -> ModifiedView) -> some View {
+    func tvOSExcluded <ModifiedView: View> (@ViewBuilder modifier: (Self) -> ModifiedView) -> some View {
         #if !os(tvOS)
         return modifier(self)
         #else
@@ -128,7 +128,7 @@ public extension View {
     ///
     /// - IMPORTANT: Using OS-specific APIs which may be unavailable on other platforms may cause compile-time errors.
     @inlinable
-    func watchOS <ModifiedView: View> (modifier: (Self) -> ModifiedView) -> some View {
+    func watchOS <ModifiedView: View> (@ViewBuilder modifier: (Self) -> ModifiedView) -> some View {
         #if os(watchOS)
         return modifier(self)
         #else
@@ -142,7 +142,7 @@ public extension View {
     ///
     /// - IMPORTANT: Using OS-specific APIs which may be unavailable on other platforms may cause compile-time errors.
     @inlinable
-    func watchOSExcluded <ModifiedView: View> (modifier: (Self) -> ModifiedView) -> some View {
+    func watchOSExcluded <ModifiedView: View> (@ViewBuilder modifier: (Self) -> ModifiedView) -> some View {
         #if !os(watchOS)
         return modifier(self)
         #else
