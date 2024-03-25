@@ -7,6 +7,7 @@
 //
 
 import GameplayKit
+import OctopusCore
 
 #if os(macOS)
 
