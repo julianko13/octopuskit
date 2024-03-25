@@ -27,6 +27,7 @@
 
 import SpriteKit
 import GameplayKit
+import OctopusCore
 
 #if canImport(UIKit)
 
