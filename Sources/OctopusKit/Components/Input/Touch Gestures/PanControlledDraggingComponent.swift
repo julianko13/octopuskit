@@ -19,6 +19,7 @@
 
 import SpriteKit
 import GameplayKit
+import OctopusCore
 
 #if os(iOS) // TODO: Add macOS trackpad and tvOS support.
 
